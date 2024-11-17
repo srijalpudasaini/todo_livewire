@@ -104,6 +104,9 @@
         font-size: 12px;
         color: #157347;
     }
+    .text-center{
+        text-align: center;
+    }
 
 </style>
 

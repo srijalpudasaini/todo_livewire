@@ -20,10 +20,15 @@ class Todolist extends Component
 
         session()->flash('success','Created');
     }
+
+    public function delete($id){
+        Todo::find($id)->delete();
+    }
     public function render()
     {
         return view('livewire.todolist',[
             'todos'=> Todo::latest()->get()
         ]);
     }
+
 }

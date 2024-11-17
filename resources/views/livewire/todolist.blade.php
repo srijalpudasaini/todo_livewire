@@ -12,14 +12,20 @@
     </div>
 
     <div class="todo-list light-bg border-white">
-        @foreach ($todos as $todo)
-            <div class="todo-item flex" wire:key="{{ $todo->id }}">
-                <p>{{ $todo->name }}</p>
-                <div class="actions">
-                    <button><img src="{{ asset('icon/edit.svg') }}" alt=""></button>
-                    <button><img src="{{ asset('icon/close.svg') }}" alt=""></button>
+
+        @if ($todos->isEmpty())
+            <h4 class="text-center">No Todos Found</h4>
+        @else
+            @foreach ($todos as $todo)
+                <div class="todo-item flex" wire:key="{{ $todo->id }}">
+                    <p>{{ $todo->name }}</p>
+                    <div class="actions">
+                        <button><img src="{{ asset('icon/edit.svg') }}" alt=""></button>
+                        <button wire:click = 'delete({{ $todo->id }})'><img src="{{ asset('icon/close.svg') }}"
+                                alt=""></button>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
+        @endif
     </div>
 </div>
