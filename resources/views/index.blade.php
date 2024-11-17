@@ -73,7 +73,7 @@
         margin-bottom: 1rem;
     }
 
-    input {
+    input[type=text] {
         padding: 8px;
         outline: none;
         border-radius: 15px;
@@ -106,6 +106,18 @@
     }
     .text-center{
         text-align: center;
+    }
+    .todo-item .flex{
+        justify-content: start;
+        gap: 5px;
+    }
+    .cancel-btn{
+        background: red;
+        color: white;
+    }
+    .update-btn{
+        background: rgb(41, 182, 229);
+        color: white;
     }
 
 </style>
