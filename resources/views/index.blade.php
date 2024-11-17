@@ -88,33 +88,27 @@
     button {
         cursor: pointer;
         background: none;
-        outline: none;
         border: none;
+        outline: none;
     }
 
     .todo-list {
         padding: 2rem;
+    }
+    .error{
+        font-size: 12px;
+        color: red;
+    }
+    .success{
+        font-size: 12px;
+        color: #157347;
     }
 
 </style>
 
 <body>
     <div class="container">
-        <div class="todo-add border-white light-bg">
-            <h4>Create New Todo</h4>
-            <input type="text" class="w-100" placeholder="Todo">
-            <button class="btn create-btn">Create +</button>
-        </div>
-
-        <div class="todo-list light-bg border-white">
-            <div class="todo-item flex">
-                <p>Todo</p>
-                <div class="actions">
-                    <button><img src="{{ asset('icon/edit.svg') }}" alt=""></button>
-                    <button><img src="{{ asset('icon/close.svg') }}" alt=""></button>
-                </div>
-            </div>
-        </div>
+        @livewire('todolist')
     </div>
 </body>
 
