@@ -12,12 +12,14 @@
     </div>
 
     <div class="todo-list light-bg border-white">
-        <div class="todo-item flex">
-            <p>Todo</p>
-            <div class="actions">
-                <button><img src="{{ asset('icon/edit.svg') }}" alt=""></button>
-                <button><img src="{{ asset('icon/close.svg') }}" alt=""></button>
+        @foreach ($todos as $todo)
+            <div class="todo-item flex" wire:key="{{ $todo->id }}">
+                <p>{{ $todo->name }}</p>
+                <div class="actions">
+                    <button><img src="{{ asset('icon/edit.svg') }}" alt=""></button>
+                    <button><img src="{{ asset('icon/close.svg') }}" alt=""></button>
+                </div>
             </div>
-        </div>
+        @endforeach
     </div>
 </div>
